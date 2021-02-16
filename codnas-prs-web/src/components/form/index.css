@@ -1,0 +1,9 @@
+.form-content {
+  margin: 3vh 0 2vh 0;
+  flex-grow: 1;
+}
+
+.form-control {
+  text-align: center;
+  margin-bottom: 1vh;
+}

@@ -90,12 +90,15 @@ h1 {
   transform: scale(1.1);
 }
 
+.cards__item__btn {
+  text-align: center;
+}
+
 .cards__item__title {
   color: #252e48;
   font-size: 36px;
   line-height: 32px;
   text-align: center;
-  margin-bottom: 5vh;
 }
 
 .cards__item__subtitle {
@@ -110,6 +113,15 @@ h1 {
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  margin-bottom: 2vh;
+}
+
+.cards__item__body.primary {
+  color: #cb6768;
+}
+
+.icon__tutorial {
+  margin-right: 7px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -129,3 +141,4 @@ h1 {
     margin-bottom: 2rem;
   }
 }
+
