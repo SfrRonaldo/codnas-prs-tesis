@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
+import Card from "../../components/card";
 
 const Home = () => {
   return (
     <Fragment>
-      <h1>Inicio</h1>
+      <div className="home">
+        <Card />
+      </div>
     </Fragment>
   );
 };
