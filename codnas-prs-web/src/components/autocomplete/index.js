@@ -9,9 +9,13 @@ const PDBSelect = () => {
       options={top100Films}
       getOptionLabel={(option) => option.title}
       size="small"
-      fullWidth
       renderInput={(params) => (
-        <TextField {...params} label="Proteína repetida" variant="outlined" />
+        <TextField
+          {...params}
+          label="Proteína repetida"
+          variant="outlined"
+          style={{ width: "100%" }}
+        />
       )}
     />
   );

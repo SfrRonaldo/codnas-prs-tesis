@@ -9,14 +9,14 @@ const Form = () => {
     <div className="form-content">
       <div className="form-control">
         <Grid container justify="center" spacing={3}>
-          <Grid item lg={6} md={6} xs={8}>
+          <Grid item lg={12} md={12} xs={12}>
             <PDBSelect />
           </Grid>
         </Grid>
       </div>
       <div className="form-control">
         <Grid container justify="center" spacing={3}>
-          <Grid item xs={4} lg={3} md={3}>
+          <Grid item xs={6} lg={6} md={6}>
             <TextField
               id="inf"
               label="Inf."
@@ -24,9 +24,10 @@ const Form = () => {
               size="small"
               type="number"
               placeholder="2"
+              fullWidth
             />
           </Grid>
-          <Grid item xs={4} lg={3} md={3}>
+          <Grid item xs={6} lg={6} md={6}>
             <TextField
               id="sup"
               label="Sup."
@@ -34,18 +35,19 @@ const Form = () => {
               size="small"
               type="number"
               placeholder="79"
+              fullWidth
             />
           </Grid>
         </Grid>
       </div>
       <div className="form-control">
         <Grid container justify="center" spacing={3}>
-          <Grid item xs={12} lg={3} md={3}>
+          <Grid item xs={12} lg={6} md={6}>
             <Button to="/estimate" buttonStyle="btn--primary">
               Estimar
             </Button>
           </Grid>
-          <Grid item xs={12} lg={3} md={3}>
+          <Grid item xs={12} lg={6} md={6}>
             <Button to="/detail" buttonStyle="btn--primary">
               Buscar
             </Button>
