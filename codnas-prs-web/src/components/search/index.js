@@ -19,7 +19,7 @@ const Search = ({ title, text, color }) => {
                   <span>{text}</span>
                 </div>
                 <div className={`cards__item__btn`}>
-                  <Button to="/" buttonStyle="btn--outline">
+                  <Button to="/tutorial" buttonStyle="btn--outline" width="40%">
                     <TutorialIcon className="icon__tutorial" />
                     <span>¿Cómo evaluar?</span>
                   </Button>

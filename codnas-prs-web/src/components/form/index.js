@@ -41,10 +41,14 @@ const Form = () => {
       <div className="form-control">
         <Grid container justify="center" spacing={3}>
           <Grid item xs={12} lg={3} md={3}>
-            <Button buttonStyle="btn--primary">Estimar</Button>
+            <Button to="/estimate" buttonStyle="btn--primary">
+              Estimar
+            </Button>
           </Grid>
           <Grid item xs={12} lg={3} md={3}>
-            <Button buttonStyle="btn--primary">Buscar</Button>
+            <Button to="/detail" buttonStyle="btn--primary">
+              Buscar
+            </Button>
           </Grid>
         </Grid>
       </div>
