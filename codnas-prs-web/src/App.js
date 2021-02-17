@@ -12,6 +12,7 @@ import Detail from "./pages/detail";
 import Estimate from "./pages/estimate";
 import NotFound from "./pages/not-found";
 import "./App.css";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/404" component={NotFound} />
           <Redirect from="*" to="/404" />
         </Switch>
+        <Footer />
       </Router>
     </Fragment>
   );
