@@ -1,9 +1,22 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
+import PrsContext from "../../context/prs/prsContext";
 
 const Estimate = () => {
+  // Obtener el state del context
+  const prsContext = useContext(PrsContext);
+  const { getPr } = prsContext;
+
+  const [pr, setPr] = useState(null);
+
+  useEffect(() => {
+    setPr(getPr());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Fragment>
-      <h1>Estimar</h1>
+      {pr ? pr.pdbChain ? <h1>ESTIMAR</h1> : <Redirect to="/" /> : null}
     </Fragment>
   );
 };

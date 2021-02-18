@@ -5,8 +5,9 @@ import { SET_CURRENT_PR, CLEAR_PR } from "../../types";
 
 const PrsState = (props) => {
   const initialState = {
-    errorFormulario: "NO_ERROR",
-    pr: null,
+    pr: localStorage.getItem("pr"),
+    lower: localStorage.getItem("lower"),
+    higher: localStorage.getItem("higher"),
   };
 
   // Dispatch para ejecutar las acciones
@@ -22,13 +23,21 @@ const PrsState = (props) => {
     dispatch({ type: CLEAR_PR });
   };
 
+  // Obtener Pr de LocalStorage
+  const getPr = () => {
+    const pdbChain = localStorage.getItem("pr");
+    const low = localStorage.getItem("lower");
+    const high = localStorage.getItem("higher");
+    return { pdbChain, low, high };
+  };
+
   return (
     <prsContext.Provider
       value={{
-        errorFormulario: state.errorFormulario,
         pr: state.pr,
         setCurrentPr,
         clearPr,
+        getPr,
       }}
     >
       {props.children}

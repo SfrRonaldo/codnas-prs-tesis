@@ -6,7 +6,7 @@ import ItemTutorial4 from "../item-tutorial-4";
 import ItemTutorial41 from "../item-tutorial-4-1";
 import ItemTutorial42 from "../item-tutorial-4-2";
 
-function CardsTutorial() {
+const CardsTutorial = () => {
   return (
     <Fragment>
       <div className="cards">
@@ -35,6 +35,6 @@ function CardsTutorial() {
       </div>
     </Fragment>
   );
-}
+};
 
 export default CardsTutorial;
