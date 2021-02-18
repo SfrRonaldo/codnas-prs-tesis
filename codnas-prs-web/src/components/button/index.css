@@ -5,7 +5,7 @@
 
 .btn {
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -27,8 +27,8 @@
 }
 
 .btn--medium {
-  padding: 8px 20px;
-  font-size: 18px;
+  padding: 8px auto;
+  font-size: 14px;
 }
 
 .btn--large {

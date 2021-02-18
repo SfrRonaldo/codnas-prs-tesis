@@ -1,5 +1,5 @@
 .form-content {
-  margin: 3vh 40vh 2vh 40vh;
+  margin: 3vh 30vh 2vh 30vh;
   flex-grow: 1;
 }
 
@@ -11,6 +11,5 @@
 @media screen and (max-width: 959px) {
   .form-content {
     margin: 3vh 0 2vh 0;
-    flex-grow: 1;
   }
 }
