@@ -13,13 +13,26 @@ const Button = ({
   buttonStyle,
   buttonSize,
   width,
-  to,
+  to = "#!",
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+
+  if (to === "")
+    return (
+      <button
+        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+        onClick={onClick}
+        type={type}
+        style={{ width: width }}
+      >
+        {children}
+      </button>
+    );
+
   return (
     <Link to={to} className="btn-mobile">
       <button

@@ -47,7 +47,7 @@ const Form = () => {
       // En el caso de no rellenar formulario
       if (pdbChain === "" && lower === "" && higher === "") {
         setMsgError(
-          "Debe rellenar el campo de la proteína repetida con o sin los campos de la región de repetición (Inf. y Sup.)."
+          "Falta llenar el campo de la proteína repetida con o sin los campos de la región de repetición (Inf. y Sup.)."
         );
         handleClick();
         return;
@@ -55,13 +55,14 @@ const Form = () => {
       // En el caso de solo rellenar el pdbChain
       if (pdbChain !== "" && lower === "" && higher === "") {
         setCurrentPr(pr);
+        setMsgError("");
         history.push("/detail");
         return;
       }
       // En el caso de rellenar el pdbChain y uno de los limites de la region de repeticion
       if (pdbChain !== "" && (lower === "" || higher === "")) {
         setMsgError(
-          "Si gusta estimar precisa de rellenar los campos de la región de repetición (Inf. y Sup.)."
+          "Si gusta estimar precisa de llenar los campos de la región de repetición (Inf. y Sup.)."
         );
         handleClick();
         return;
@@ -73,6 +74,7 @@ const Form = () => {
         return;
       }
       setCurrentPr(pr);
+      setMsgError("");
       history.push("/estimate");
     }
   };
@@ -84,6 +86,44 @@ const Form = () => {
   const handleClose = (_e, reason) => {
     if (reason === "clickaway") return;
     setOpen(false);
+  };
+
+  const onClickDetail = (_e) => {
+    if (pdbChain === "") {
+      setMsgError("Falta llenar el campo de la proteína repetida.");
+      handleClick();
+      return;
+    }
+    setCurrentPr(pr);
+    setMsgError("");
+    history.push("/detail");
+  };
+
+  const onClickEstimate = (_e) => {
+    if (pdbChain === "" && lower === "" && higher === "") {
+      setMsgError(
+        "Falta llenar el campo de la proteína repetida con los campos de la región de repetición (Inf. y Sup.)."
+      );
+      handleClick();
+      return;
+    }
+    // En el caso de rellenar el pdbChain y uno de los limites de la region de repeticion
+    if (pdbChain !== "" && (lower === "" || higher === "")) {
+      setMsgError(
+        "Falta llenar los campos de la región de repetición (Inf. y Sup.)."
+      );
+      handleClick();
+      return;
+    }
+    // En el caso de no rellenar el pdb chain
+    if ((lower !== "" || higher !== "") && pdbChain === "") {
+      setMsgError("Falta llenar el campo de la proteína repetida.");
+      handleClick();
+      return;
+    }
+    setCurrentPr(pr);
+    setMsgError("");
+    history.push("/estimate");
   };
 
   return (
@@ -134,12 +174,20 @@ const Form = () => {
         <div className="form-control">
           <Grid container justify="center" spacing={3}>
             <Grid item xs={12} lg={6} md={6}>
-              <Button to="/estimate" buttonStyle="btn--primary">
+              <Button
+                to={""}
+                onClick={onClickEstimate}
+                buttonStyle="btn--primary"
+              >
                 Estimar
               </Button>
             </Grid>
             <Grid item xs={12} lg={6} md={6}>
-              <Button to="/detail" buttonStyle="btn--primary">
+              <Button
+                to={""}
+                onClick={onClickDetail}
+                buttonStyle="btn--primary"
+              >
                 Buscar
               </Button>
             </Grid>

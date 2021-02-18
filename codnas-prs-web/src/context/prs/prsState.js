@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import prsReducer from "./prsReducer";
 import prsContext from "./prsContext";
-import { SET_CURRENT_PR, FORM_VALIDATE, CLEAR_PR } from "../../types";
+import { SET_CURRENT_PR, CLEAR_PR } from "../../types";
 
 const PrsState = (props) => {
   const initialState = {
@@ -17,11 +17,6 @@ const PrsState = (props) => {
     dispatch({ type: SET_CURRENT_PR, payload: pr });
   };
 
-  // Validar el formulario por errores
-  const showError = (error) => {
-    dispatch({ type: FORM_VALIDATE, payload: error });
-  };
-
   // Limpiar Pr
   const clearPr = () => {
     dispatch({ type: CLEAR_PR });
@@ -33,7 +28,6 @@ const PrsState = (props) => {
         errorFormulario: state.errorFormulario,
         pr: state.pr,
         setCurrentPr,
-        showError,
         clearPr,
       }}
     >

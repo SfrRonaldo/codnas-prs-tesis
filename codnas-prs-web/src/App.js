@@ -13,27 +13,24 @@ import Estimate from "./pages/estimate";
 import NotFound from "./pages/not-found";
 import Footer from "./components/footer";
 import PrsState from "./context/prs/prsState";
-import AlertState from "./context/alerts/alertState";
 import "./App.css";
 
 function App() {
   return (
     <PrsState>
-      <AlertState>
-        <Router>
-          <Navbar />
-          <ScrollToTop />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/tutorial" component={Tutorial} />
-            <Route exact path="/detail" component={Detail} />
-            <Route exact path="/estimate" component={Estimate} />
-            <Route exact path="/404" component={NotFound} />
-            <Redirect from="*" to="/404" />
-          </Switch>
-          <Footer />
-        </Router>
-      </AlertState>
+      <Router>
+        <Navbar />
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/tutorial" component={Tutorial} />
+          <Route exact path="/detail" component={Detail} />
+          <Route exact path="/estimate" component={Estimate} />
+          <Route exact path="/404" component={NotFound} />
+          <Redirect from="*" to="/404" />
+        </Switch>
+        <Footer />
+      </Router>
     </PrsState>
   );
 }
