@@ -8,7 +8,7 @@ const Home = () => {
     <Fragment>
       <section>
         <Parallax
-          bgImage="/images/img-home.png"
+          bgImage="/images/img-2.jpg"
           bgImageAlt="prs"
           bgImageStyle={{ height: "100%", width: "100%" }}
         >

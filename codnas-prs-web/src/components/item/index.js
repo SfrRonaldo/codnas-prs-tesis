@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Item = (props) => {
   return (
-    <>
+    <Fragment>
       <li className="cards__item">
         <a
           className="cards__item__link"
@@ -14,11 +14,13 @@ const Item = (props) => {
             <img className="cards__item__img" alt={props.alt} src={props.src} />
           </figure>
           <div className="cards__item__info">
-            <h5 className="cards__item__text">{props.text}</h5>
+            <h5 className="cards__item__text" style={{ fontWeight: "lighter" }}>
+              {props.text}
+            </h5>
           </div>
         </a>
       </li>
-    </>
+    </Fragment>
   );
 };
 

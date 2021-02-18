@@ -12,7 +12,7 @@ const Search = ({ title, text, color }) => {
             <li className="cards__item">
               <div className="cards__item__paper">
                 <div className="cards__item__title">
-                  <span>{title}</span>
+                  <span style={{ fontWeight: "bold" }}>{title}</span>
                 </div>
                 <Form />
                 <div className={`cards__item__body ${color}`}>

@@ -4,7 +4,9 @@ import Item from "../item";
 function Cards() {
   return (
     <div className="cards">
-      <h1>Con la colaboración de las universidades</h1>
+      <h2 className="cards__item__subtitle" style={{ textAlign: "center" }}>
+        Con la colaboración de las universidades
+      </h2>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
