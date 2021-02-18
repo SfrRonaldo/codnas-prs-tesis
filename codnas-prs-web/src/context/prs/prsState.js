@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import prsReducer from "./prsReducer";
 import prsContext from "./prsContext";
-import { FORMULARIO_PR, VALIDAR_FORMULARIO } from "../../types";
+import { PR_FORM, FORM_VALIDATE } from "../../types";
 
 const PrsState = (props) => {
   const initialState = {
@@ -15,12 +15,12 @@ const PrsState = (props) => {
 
   // Funciones
   const showForm = () => {
-    dispatch({ type: FORMULARIO_PR });
+    dispatch({ type: PR_FORM });
   };
 
   // Validar el formulario por errores
   const showError = () => {
-    dispatch({ type: VALIDAR_FORMULARIO });
+    dispatch({ type: FORM_VALIDATE });
   };
 
   return (
