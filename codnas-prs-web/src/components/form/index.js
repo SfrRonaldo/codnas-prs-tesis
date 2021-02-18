@@ -42,6 +42,33 @@ const Form = () => {
     setPr({ ...pr, pdbChain: newInputValue });
   };
 
+  const is_valid = () => {
+    // En el caso de no rellenar el pdb chain
+    if ((lower !== "" || higher !== "") && pdbChain === "") {
+      setMsgError("Falta llenar el campo de la proteína repetida.");
+      handleClick();
+      return false;
+    }
+    // Verificar que lower > 0 y higher > 0
+    if (parseInt(lower) <= 0 || parseInt(higher) <= 0) {
+      setMsgError(
+        "El límite inferior y el límite superior de la región de repetición (Inf. y Sup., respectivamente) tiene que ser valores mayores que 0."
+      );
+      handleClick();
+      return false;
+    }
+    // Verificar que lower > higher
+    if (parseInt(lower) >= parseInt(higher)) {
+      setMsgError(
+        "El límite inferior de la región de repetición (Inf.) tienen que ser mayor al límite superior de la región de repetición (Sup.)."
+      );
+      handleClick();
+      return false;
+    }
+    // Verificar que la región de repetición esté dentro del alcance
+    return true;
+  };
+
   const onKeyPress = (e) => {
     if (e.key === "Enter") {
       // En el caso de no rellenar formulario
@@ -73,9 +100,11 @@ const Form = () => {
         handleClick();
         return;
       }
-      setCurrentPr(pr);
-      setMsgError("");
-      history.push("/estimate");
+      if (is_valid()) {
+        setCurrentPr(pr);
+        setMsgError("");
+        history.push("/estimate");
+      }
     }
   };
 
@@ -121,9 +150,11 @@ const Form = () => {
       handleClick();
       return;
     }
-    setCurrentPr(pr);
-    setMsgError("");
-    history.push("/estimate");
+    if (is_valid()) {
+      setCurrentPr(pr);
+      setMsgError("");
+      history.push("/estimate");
+    }
   };
 
   return (
@@ -196,7 +227,7 @@ const Form = () => {
       </div>
       <Snackbar
         open={open}
-        autoHideDuration={1000}
+        autoHideDuration={3000}
         onClose={handleClose}
         style={{ textAlign: "center" }}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
