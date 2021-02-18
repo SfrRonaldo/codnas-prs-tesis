@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
+import CardsTutorial from "../../components/cards-tutorial";
 
 const Tutorial = () => {
   return (
     <Fragment>
-      <h1>Tutorial</h1>
+      <CardsTutorial />
     </Fragment>
   );
 };

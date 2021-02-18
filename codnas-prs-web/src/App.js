@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import ScrollToTop from "./components/scroll-top";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Tutorial from "./pages/tutorial";
@@ -19,6 +20,7 @@ function App() {
     <Fragment>
       <Router>
         <Navbar />
+        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/tutorial" component={Tutorial} />
