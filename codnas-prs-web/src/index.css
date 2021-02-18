@@ -32,6 +32,13 @@ h1 {
   background:#fff;
 }
 
+.cards__item__background {
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  border-radius: 10px;
+}
+
 .cards__item__paper {
   padding: 30px;
   display: flex;
@@ -67,7 +74,7 @@ h1 {
   font-size: 12px;
   font-weight: 700;
   color: #fff;
-  background-color: #1f98f4;
+  background-color: #cb6768;
   box-sizing: border-box;
 }
 
@@ -82,7 +89,7 @@ h1 {
   max-width: 100%;
   height: 100%;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: scale-down;
   transition: all 0.2s linear;
 }
 
@@ -116,12 +123,35 @@ h1 {
   margin-bottom: 2vh;
 }
 
+.cards__item__info {
+  padding: 2vh;
+}
+
 .cards__item__body.primary {
   color: #cb6768;
 }
 
+.cards__item__text {
+  color: #252e48;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+}
+
 .icon__tutorial {
   margin-right: 7px;
+}
+
+.cards__item__link {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1200px) {
