@@ -10,7 +10,7 @@ const Home = () => {
         <Parallax
           bgImage="/images/img-home.png"
           bgImageAlt="prs"
-          bgImageStyle={{ height: "100%" }}
+          bgImageStyle={{ height: "100%", width: "100%" }}
         >
           <Search
             title="Herramienta para el análisis de diversidad conformacional en estructuras de proteínas repetidas"
