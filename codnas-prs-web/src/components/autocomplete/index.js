@@ -2,19 +2,21 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
-const PDBSelect = () => {
+const PDBSelect = ({ handleInputChange, onKeyPress }) => {
   return (
     <Autocomplete
-      id="pdb-select"
+      id="pdbChain"
       options={top100Films}
       getOptionLabel={(option) => option.title}
       size="small"
+      onInputChange={handleInputChange}
       renderInput={(params) => (
         <TextField
           {...params}
           label="Proteína repetida"
           variant="outlined"
           style={{ width: "100%" }}
+          onKeyPress={onKeyPress}
         />
       )}
     />
