@@ -6,6 +6,15 @@ h1 {
   text-align: center;
 }
 
+.cards__container__detail {
+  display: inherit;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1050px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .cards__container__tutorial {
   display: flex;
   flex-flow: column;
@@ -180,7 +189,11 @@ h1 {
 }
 
 .table__detail {
-  min-width: "500px",
+  min-width: "300px",
+}
+
+.table__cell {
+  font-weight: "bold",
 }
 
 @media only screen and (min-width: 1200px) {
@@ -221,6 +234,11 @@ h1 {
     line-height: 16px;
     text-align: justify;
   }
+
+  .cards__container__detail {
+    display: inherit;
+  }
+
 }
 
 

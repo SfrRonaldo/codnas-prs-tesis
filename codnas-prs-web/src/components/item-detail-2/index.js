@@ -17,7 +17,7 @@ const ItemDetail2 = ({ infoEstructural }) => {
             <h2 className="cards__item__subtitle">Información Estructural</h2>
             <br />
             <TableContainer component={Paper}>
-              <Table className="table-detail" arial-label="simple data">
+              <Table className="table__detail" arial-label="simple data">
                 <TableBody>
                   <TableRow>
                     <TableCell
