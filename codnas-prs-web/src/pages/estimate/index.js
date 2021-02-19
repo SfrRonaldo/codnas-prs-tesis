@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
+import CardsEstimate from "../../components/cards-estimate";
 import PrsContext from "../../context/prs/prsContext";
 
 const Estimate = () => {
@@ -16,7 +17,13 @@ const Estimate = () => {
 
   return (
     <Fragment>
-      {pr ? pr.pdbChain ? <h1>ESTIMAR</h1> : <Redirect to="/" /> : null}
+      {pr ? (
+        pr.pdbChain ? (
+          <CardsEstimate infoGeneral={pr} />
+        ) : (
+          <Redirect to="/" />
+        )
+      ) : null}
     </Fragment>
   );
 };

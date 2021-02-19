@@ -86,7 +86,7 @@ function TablePaginationActions(props) {
   );
 }*/
 
-const ItemEsimate2 = ({ conformaciones }) => {
+const ItemEstimate3 = ({ conformaciones }) => {
   /*const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -193,4 +193,4 @@ const ItemEsimate2 = ({ conformaciones }) => {
   );
 };
 
-export default ItemEsimate2;
+export default ItemEstimate3;
