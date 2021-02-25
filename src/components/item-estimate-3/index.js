@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
   IconButton,
   makeStyles,
@@ -98,10 +98,6 @@ const ItemEstimate3 = ({ conformaciones }) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  useEffect(() => {
-    console.log(conformaciones);
-  }, []);
 
   return (
     <Fragment>
